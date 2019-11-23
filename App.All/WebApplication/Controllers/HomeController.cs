@@ -1,22 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Library.Service;
-using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
 
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
         public IActionResult Index()
         {
-            ExampleService exampleService = new ExampleService();
-            var serviceResult = exampleService.GetSometing();
+            var message = "Alcohol is important.";
 
-            ViewBag.ServiceValue = serviceResult;
+            _logger.LogInformation(message);
+
+            ViewBag.MessageValue = message;
 
             return View();
         }

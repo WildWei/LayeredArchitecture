@@ -10,3 +10,10 @@
 /App.All/WebApplication/obj
 /App.All/.vs
 /.vs
+/App.All/Library.Service/bin/Debug/netstandard2.0
+/App.All/MyDatabase/bin/Debug
+/App.All/MyDatabase/obj/Debug
+/App.All/WebApplication/WebApplication.csproj.user
+/App.All/MyDatabase/MyDatabase.jfm
+/App.All/MyDatabase/MyDatabase.sqlproj.user
+/App.All/MyDatabase/MyDatabase.dbmdl
