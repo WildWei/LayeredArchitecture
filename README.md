@@ -1,2 +1,2 @@
-# LayeredArchitecture
-.net core Layered Architecture.git
+# .net core Project 
+.net core v2.1
