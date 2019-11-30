@@ -17,3 +17,6 @@
 /App.All/MyDatabase/MyDatabase.jfm
 /App.All/MyDatabase/MyDatabase.sqlproj.user
 /App.All/MyDatabase/MyDatabase.dbmdl
+/App.All/CakeMyBlog/bin/Debug
+/App.All/CakeMyBlog/obj/Debug
+*.user
