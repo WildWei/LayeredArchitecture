@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CakeMyBlog.Service\CakeMyBlog.Service.csproj" />
     <ProjectReference Include="..\Library.Service\Library.Service.csproj" />
   </ItemGroup>
 

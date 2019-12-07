@@ -20,3 +20,13 @@
 /App.All/CakeMyBlog/bin/Debug
 /App.All/CakeMyBlog/obj/Debug
 *.user
+/App.All/CakeMyBlog.DataAccessLayer/bin/Debug/netstandard2.0
+/App.All/CakeMyBlog.DataAccessLayer/obj/Debug/netstandard2.0
+/App.All/CakeMyBlog.DataAccessLayer/obj
+/App.All/CakeMyBlog.Service/bin/Debug/netstandard2.0
+/App.All/CakeMyBlog.Service/obj
+/App.All/Model.DataAccessLayer/bin/Debug/netstandard2.0
+/App.All/Model.DataAccessLayer/obj
+/App.All/SKH.HIS.Platform/bin/Debug/netstandard2.0
+/App.All/SKH.HIS.Platform/obj
+/App.All/CakeMyBlog
