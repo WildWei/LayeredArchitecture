@@ -1,0 +1,30 @@
+﻿<div>
+    <b>Cake my Blog</b><br/>
+    帳號:<input id="userName" /><br />
+    密碼:<input id="passWord" /><br />
+    <input id="loginBtn" type="button" value="Login" />
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+
+            $("#loginBtn").click(function () {
+                var userName = $("#userName").val();
+                var passWord = $("#passWord").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "@Url.Action("Login")",
+                    data: {
+                        userName: userName,
+                        passWord: passWord
+                    }, success: function () {
+                        window.location.href = '@Url.Action("Index", "Home")';
+                    }, error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+}

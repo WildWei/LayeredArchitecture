@@ -1,6 +1,7 @@
 ﻿using CakeMyBlog.Platform.DataAccess;
 using Dapper;
 using Model.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -32,6 +33,30 @@ namespace CakeMyBlog.DataAccessLayer
             return members;
         }
 
+        public Member GetUserByUserNamePassWord(string userName, string passWord)
+        {
+            Member member = null;
+            var param = new DynamicParameters();
+            param.Add("userName", userName);
+            param.Add("passWord", passWord);
+
+            string sqlCommand = @"
+                    SELECT [Id]
+                          ,[Name]
+                          ,[Email]
+                          ,[Gender]
+                      FROM [Member]
+                      Where Account = @userName
+                      and PassWord = @PassWord
+                    ";
+
+            using (var conn = new SqlConnection(DataAccessService.connectionStr))
+            {
+                member = conn.Query<Member>(sqlCommand, param).FirstOrDefault();
+            }
+
+            return member;
+        }
     }
 
     

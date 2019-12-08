@@ -19,5 +19,11 @@ namespace CakeMyBlog.Service
             var result = memberProvider.GetAllMembers();
             return result;
         }
+
+        public Member GetUserByUserNamePassWord(string userName, string passWord)
+        {
+            var result = memberProvider.GetUserByUserNamePassWord(userName, passWord);
+            return result;
+        }
     }
 }
