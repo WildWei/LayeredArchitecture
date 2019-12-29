@@ -14,3 +14,6 @@ https://medium.com/@WilliamWhetstone/net-core-project-%E5%BE%9E%E9%9B%B6%E9%96%8
 
 # .Net Core Project 從零開始 — 資料庫存取利器Dapper
 https://medium.com/@WilliamWhetstone/net-core-project-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E8%B3%87%E6%96%99%E5%BA%AB%E5%AD%98%E5%8F%96%E5%88%A9%E5%99%A8dapper-a29a6c1390bb
+
+# .Net Core Project 從零開始 — 認識與實作Filter
+https://medium.com/@WilliamWhetstone/net-core-project-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E8%AA%8D%E8%AD%98%E8%88%87%E5%AF%A6%E4%BD%9Cfilter-86a768e394e3
