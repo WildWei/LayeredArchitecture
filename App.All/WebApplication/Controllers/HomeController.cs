@@ -1,4 +1,5 @@
 ﻿using CakeMyBlog.Service;
+using CakeMyBlog.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -10,19 +11,19 @@ namespace WebApplication.Controllers
     public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
-        MemberService memberService;
+        private readonly IMemberService _memberService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMemberService memberService)
         {
             _logger = logger;
-            memberService = new MemberService();
+            _memberService = memberService;
         }
 
         public IActionResult Index()
         {
             var message = "Alcohol is important.";
 
-            var memberList =  memberService.GetAllMembers();
+            var memberList = _memberService.GetAllMembers();
 
             _logger.LogInformation(message);
 

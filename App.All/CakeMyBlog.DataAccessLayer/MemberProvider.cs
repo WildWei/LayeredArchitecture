@@ -1,4 +1,5 @@
-﻿using CakeMyBlog.Platform.DataAccess;
+﻿using CakeMyBlog.DataAccessLayer.Interface;
+using CakeMyBlog.Platform.DataAccess;
 using Dapper;
 using Model.DataAccessLayer;
 using System;
@@ -8,8 +9,9 @@ using System.Linq;
 
 namespace CakeMyBlog.DataAccessLayer
 {
-    public class MemberProvider
+    public class MemberProvider: IMemberProvider
     {
+
         /// <summary>
         /// 查詢所有會員資料
         /// </summary>

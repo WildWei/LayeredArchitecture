@@ -21,15 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Service", "Library.
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CakeMyBlog", "CakeMyBlog\CakeMyBlog.sqlproj", "{0A3067A5-69E1-419D-B1EE-796CBF9100BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeMyBlog.DataAccessLayer", "CakeMyBlog.DataAccessLayer\CakeMyBlog.DataAccessLayer.csproj", "{A1A59C07-06DE-4BFD-A544-356D01509D38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CakeMyBlog.DataAccessLayer", "CakeMyBlog.DataAccessLayer\CakeMyBlog.DataAccessLayer.csproj", "{A1A59C07-06DE-4BFD-A544-356D01509D38}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform", "Platform", "{A2A9347F-9228-43C0-BAC8-B262C3D7AF49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeMyBlog.Platform", "SKH.HIS.Platform\CakeMyBlog.Platform.csproj", "{0E19D5F4-5006-4B74-BF93-8D288A8BF495}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CakeMyBlog.Platform", "SKH.HIS.Platform\CakeMyBlog.Platform.csproj", "{0E19D5F4-5006-4B74-BF93-8D288A8BF495}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.DataAccessLayer", "Model.DataAccessLayer\Model.DataAccessLayer.csproj", "{87F42B15-BCEE-4A52-961C-2BDF0F94B5BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model.DataAccessLayer", "Model.DataAccessLayer\Model.DataAccessLayer.csproj", "{87F42B15-BCEE-4A52-961C-2BDF0F94B5BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeMyBlog.Service", "CakeMyBlog.Service\CakeMyBlog.Service.csproj", "{F86177E6-4FC2-42AA-B137-F186FDF03428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CakeMyBlog.Service", "CakeMyBlog.Service\CakeMyBlog.Service.csproj", "{F86177E6-4FC2-42AA-B137-F186FDF03428}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

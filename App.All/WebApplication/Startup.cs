@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CakeMyBlog.DataAccessLayer.Interface;
+using CakeMyBlog.Service;
+using CakeMyBlog.Service.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -23,6 +26,7 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            DIRegister(services);
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
@@ -67,6 +71,16 @@ namespace WebApplication
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        /// <summary>
+        /// 依賴注入的註冊
+        /// </summary>
+        /// <param name="services"></param>
+        private void DIRegister(IServiceCollection services)
+        {
+            services.AddScoped<IMemberService, MemberService>();
+            services.AddScoped<IMemberProvider, MemberProvider>();
         }
     }
 }

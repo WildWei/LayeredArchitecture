@@ -1,5 +1,6 @@
 ﻿using CakeMyBlog.Platform.Utilities;
 using CakeMyBlog.Service;
+using CakeMyBlog.Service.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,12 +10,12 @@ namespace WebApplication.Controllers
     public class AuthController : Controller
     {
         private readonly ILogger<AuthController> _logger;
-        MemberService memberService;
+        private readonly IMemberService _memberService;
 
-        public AuthController(ILogger<AuthController> logger)
+        public AuthController(ILogger<AuthController> logger, IMemberService memberService)
         {
             _logger = logger;
-            memberService = new MemberService();
+            _memberService = memberService;
         }
 
         /// <summary>
@@ -35,7 +36,7 @@ namespace WebApplication.Controllers
         [HttpPost]
         public IActionResult Login(string userName, string passWord)
         {
-            var getMemberResult = memberService.GetUserByUserNamePassWord(userName, passWord);
+            var getMemberResult = _memberService.GetUserByUserNamePassWord(userName, passWord);
 
             if (getMemberResult == null)
             {
