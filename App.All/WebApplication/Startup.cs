@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Profiling.Storage;
 
 namespace WebApplication
 {
@@ -38,7 +39,6 @@ namespace WebApplication
                 options.Cookie.IsEssential = true;
             });
 
-
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -46,6 +46,7 @@ namespace WebApplication
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMiniProfiler();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -65,6 +66,7 @@ namespace WebApplication
             app.UseSession();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseMiniProfiler();
 
             app.UseMvc(routes =>
             {
