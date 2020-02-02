@@ -3,6 +3,9 @@ using CakeMyBlog.DataAccessLayer.Interface;
 using CakeMyBlog.Service.Interface;
 using Model.DataAccessLayer;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Collections;
 
 namespace CakeMyBlog.Service
 {
@@ -18,10 +21,10 @@ namespace CakeMyBlog.Service
         /// 取得所有會員資訊
         /// </summary>
         /// <returns></returns>
-        public List<Member> GetAllMembers()
+        public async Task<List<Member>> GetAllMembers()
         {
-            var result = _memberProvider.GetAllMembers();
-            return result;
+            var result = await _memberProvider.GetAllMembers();
+            return result.ToList();
         }
 
         /// <summary>
@@ -30,9 +33,9 @@ namespace CakeMyBlog.Service
         /// <param name="userName">帳號</param>
         /// <param name="passWord">密碼</param>
         /// <returns></returns>
-        public Member GetUserByUserNamePassWord(string userName, string passWord)
+        public async Task<Member> GetUserByUserNamePassWord(string userName, string passWord)
         {
-            var result = _memberProvider.GetUserByUserNamePassWord(userName, passWord);
+            var result = await _memberProvider.GetUserByUserNamePassWord(userName, passWord);
             return result;
         }
     }

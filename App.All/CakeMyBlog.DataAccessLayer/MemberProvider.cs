@@ -6,20 +6,21 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CakeMyBlog.DataAccessLayer
 {
     public class MemberProvider: IMemberProvider
     {
+        private readonly DataAccessService _dataAccessService = new DataAccessService();
+
 
         /// <summary>
         /// 查詢所有會員資料
         /// </summary>
         /// <returns></returns>
-        public List<Member> GetAllMembers()
+        public async Task<IEnumerable<Member>> GetAllMembers()
         {
-            List<Member> members = null;
-
             string sqlCommand = @"
                     SELECT [Id]
                           ,[Name]
@@ -28,16 +29,17 @@ namespace CakeMyBlog.DataAccessLayer
                       FROM [Member]
                     ";
 
-            using (var conn = new SqlConnection(DataAccessService.connectionStr)) {
-                members = conn.Query<Member>(sqlCommand).ToList();
-            }
-
-            return members;
+            return await _dataAccessService.QueryAsync<Member>(sqlCommand);
         }
 
-        public Member GetUserByUserNamePassWord(string userName, string passWord)
+        /// <summary>
+        /// GetUser By 會員帳號、密碼
+        /// </summary>
+        /// <param name="userName">會員帳號</param>
+        /// <param name="passWord">會員密碼</param>
+        /// <returns></returns>
+        public async Task<Member> GetUserByUserNamePassWord(string userName, string passWord)
         {
-            Member member = null;
             var param = new DynamicParameters();
             param.Add("userName", userName);
             param.Add("passWord", passWord);
@@ -52,12 +54,7 @@ namespace CakeMyBlog.DataAccessLayer
                       and PassWord = @PassWord
                     ";
 
-            using (var conn = new SqlConnection(DataAccessService.connectionStr))
-            {
-                member = conn.Query<Member>(sqlCommand, param).FirstOrDefault();
-            }
-
-            return member;
+            return await _dataAccessService.QueryFirstOrDefaultAsync<Member>(sqlCommand, param);
         }
     }
 

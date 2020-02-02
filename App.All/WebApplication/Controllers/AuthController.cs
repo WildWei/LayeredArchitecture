@@ -36,7 +36,7 @@ namespace WebApplication.Controllers
         [HttpPost]
         public IActionResult Login(string userName, string passWord)
         {
-            var getMemberResult = _memberService.GetUserByUserNamePassWord(userName, passWord);
+            var getMemberResult = _memberService.GetUserByUserNamePassWord(userName, passWord).Result;
 
             if (getMemberResult == null)
             {

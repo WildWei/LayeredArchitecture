@@ -1,5 +1,6 @@
 ﻿using Model.DataAccessLayer;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CakeMyBlog.Service.Interface
 {
@@ -9,7 +10,7 @@ namespace CakeMyBlog.Service.Interface
         /// 取得所有會員資訊
         /// </summary>
         /// <returns></returns>
-        List<Member> GetAllMembers();
+        Task<List<Member>>  GetAllMembers();
 
         // <summary>
         /// 使用帳號密碼來查詢會員資訊
@@ -17,6 +18,6 @@ namespace CakeMyBlog.Service.Interface
         /// <param name="userName">帳號</param>
         /// <param name="passWord">密碼</param>
         /// <returns></returns>
-        Member GetUserByUserNamePassWord(string userName, string passWord);
+        Task<Member> GetUserByUserNamePassWord(string userName, string passWord);
     }
 }
