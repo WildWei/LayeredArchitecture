@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CakeMyBlog.DataAccessLayer;
+﻿using CakeMyBlog.DataAccessLayer;
 using CakeMyBlog.DataAccessLayer.Interface;
 using CakeMyBlog.Service;
 using CakeMyBlog.Service.Interface;
@@ -12,7 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StackExchange.Profiling.Storage;
+using NLog;
+using System;
 
 namespace WebApplication
 {
@@ -67,6 +64,7 @@ namespace WebApplication
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseMiniProfiler();
+            LogManager.Configuration.Variables["connectionString"] = Configuration.GetConnectionString("DefaultConnection");
 
             app.UseMvc(routes =>
             {

@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Member.sql" />
+    <Build Include="dbo\NLog.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CakeMyBlog.publish.xml" />

@@ -24,6 +24,8 @@ namespace WebApplication.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
+            _logger.LogInformation("Index page says hello");
+
             return View();
         }
 
